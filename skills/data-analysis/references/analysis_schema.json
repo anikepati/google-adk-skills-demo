@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AnalysisOutput",
+  "type": "object",
+  "required": ["summary", "key_findings", "entities", "sources", "confidence"],
+  "properties": {
+    "summary":      { "type": "string" },
+    "key_findings": { "type": "array", "items": { "type": "string" } },
+    "entities": {
+      "type": "object",
+      "properties": {
+        "people":   { "type": "array", "items": { "type": "string" } },
+        "orgs":     { "type": "array", "items": { "type": "string" } },
+        "places":   { "type": "array", "items": { "type": "string" } },
+        "concepts": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title":     { "type": "string" },
+          "url":       { "type": "string", "format": "uri" },
+          "relevance": { "type": "number", "minimum": 0, "maximum": 1 }
+        }
+      }
+    },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "gaps":       { "type": "array", "items": { "type": "string" } }
+  }
+}

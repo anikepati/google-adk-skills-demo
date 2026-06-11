@@ -1,0 +1,11 @@
+{
+  "chart_type": "bar",
+  "title": "Source Relevance Scores",
+  "x_axis": "Source Domain",
+  "y_axis": "Relevance Score (0–1)",
+  "data_field": "sources",
+  "x_key": "source",
+  "y_key": "relevance",
+  "color": "#4285F4",
+  "notes": "Generated from AnalysisOutput.sources array. Swap chart_type to 'horizontal_bar' for long domain names."
+}
